@@ -20,4 +20,6 @@
 
 - [NextJS](https://nextjs.org/)</br>
 
-[Prisma](https://www.prisma.io/)</br>
+- [Prisma](https://www.prisma.io/)</br>
+
+- [Deployed Version (Vercel)](for-notes.vercel.app)
