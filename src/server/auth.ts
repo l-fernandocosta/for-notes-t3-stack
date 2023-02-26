@@ -19,6 +19,9 @@ declare module "next-auth" {
 
 export const authOptions: NextAuthOptions = {
   callbacks: {
+    redirect: ({ url, baseUrl }) => {
+      return Promise.resolve(url);
+    },
     session({ session, user }) {
       if (session.user) {
         session.user.id = user.id;
@@ -27,6 +30,7 @@ export const authOptions: NextAuthOptions = {
     },
   },
   adapter: PrismaAdapter(prisma),
+
   providers: [
     GithubProvider({
       clientId: env.GITHUB_CLIENT_ID,
